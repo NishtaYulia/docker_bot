@@ -24,22 +24,22 @@ services:
     environment:
       PGDATA: /data/postgres
 
- # pgadmin:
- #   container_name: pgadmin_container
- #   image: dpage/pgadmin4
-  #  profiles:
-  #    - "dev"
-  #  restart: on-failure
-  #  environment:
-  #    PGADMIN_DEFAULT_EMAIL: admin@admin.com
-  #    PGADMIN_DEFAULT_PASSWORD: lesson_bot
-  #  volumes:
-   #   - pgadmin_data:/var/lib/pgadmin
-   # ports:
-   #   - "5050:80"
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4
+    profiles:
+      - "dev"
+    restart: on-failure
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: lesson_bot
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    ports:
+      - "5050:80"
 
 volumes:
   postgres_data:
-  #pgadmin_data:
+  pgadmin_data:
 
 
